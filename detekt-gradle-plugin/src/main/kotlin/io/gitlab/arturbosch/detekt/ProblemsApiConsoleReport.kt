@@ -49,16 +49,14 @@ class ProblemsApiConsoleReport(
         return ""
     }
 
-    private fun mapSeverity(detektSeverity: DetektSeverity): GradleSeverity {
-        return when (detektSeverity) {
-            DetektSeverity.Warning -> GradleSeverity.WARNING
-            DetektSeverity.CodeSmell -> GradleSeverity.WARNING
-            DetektSeverity.Style -> GradleSeverity.WARNING
-            DetektSeverity.Defect -> GradleSeverity.ERROR
-            DetektSeverity.Minor -> GradleSeverity.WARNING
-            DetektSeverity.Maintainability -> GradleSeverity.WARNING
-            DetektSeverity.Security -> GradleSeverity.ERROR
-            DetektSeverity.Performance -> GradleSeverity.WARNING
-        }
+    private fun mapSeverity(detektSeverity: DetektSeverity): GradleSeverity = when (detektSeverity) {
+        DetektSeverity.Warning -> GradleSeverity.WARNING
+        DetektSeverity.CodeSmell -> GradleSeverity.WARNING
+        DetektSeverity.Style -> GradleSeverity.WARNING
+        DetektSeverity.Defect -> GradleSeverity.ERROR
+        DetektSeverity.Minor -> GradleSeverity.WARNING
+        DetektSeverity.Maintainability -> GradleSeverity.WARNING
+        DetektSeverity.Security -> GradleSeverity.ERROR
+        DetektSeverity.Performance -> GradleSeverity.WARNING
     }
 }
